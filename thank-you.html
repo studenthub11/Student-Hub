@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لك! | The Student Hub</title>
+    <meta name="description" content="شكراً لك على انضمامك إلى مجتمع The Student Hub. تحقق من بريدك الإلكتروني للحصول على الملف المجاني.">
+    
+    <!-- Google Analytics - استبدل G-XXXXXXXXXX بمعرّف القياس الخاص بك -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+      
+      // Track thank you page visit as conversion
+      gtag('event', 'conversion', {
+        'event_category': 'lead_generation',
+        'event_label': 'thank_you_page_visit'
+      });
+    </script>
+
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Additional styles specific to thank you page */
+        .thank-you-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 80vh;
+            padding: 60px 0;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            color: var(--color-success);
+            margin-bottom: 2rem;
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        .thank-you-section h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .thank-you-section p {
+            max-width: 600px;
+            font-size: var(--font-size-lg);
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .next-steps {
+            background: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin: 40px 0;
+            max-width: 700px;
+        }
+        
+        .next-steps h3 {
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            font-size: var(--font-size-xl);
+        }
+        
+        .steps-list {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 30px;
+        }
+        
+        .steps-list li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--bg-primary);
+            border-radius: 10px;
+            transition: all var(--transition-base);
+        }
+        
+        .steps-list li:hover {
+            transform: translateX(-5px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .steps-list li i {
+            margin-left: 15px;
+            color: var(--color-primary);
+            font-size: var(--font-size-lg);
+            width: 25px;
+            text-align: center;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-section {
+                padding: 40px 0;
+            }
+            
+            .thank-you-icon {
+                font-size: 4rem;
+            }
+            
+            .next-steps {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="تبديل الوضع الليلي/الصباحي">
+        <i class="fas fa-sun" id="theme-icon"></i>
+    </button>
+
+    <!-- Simplified Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">The Student Hub</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#services">خدماتنا</a></li>
+                    <li><a href="index.html#pricing">الباقات</a></li>
+                    <li><a href="index.html#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <h1>شكرًا لك!</h1>
+            
+            <p>تم إرسال "دليل الطالب الذكي: 10 خطوات لمشروع تخرج متميز" إلى بريدك الإلكتروني. إذا لم تجده، يرجى التحقق من مجلد الرسائل غير المرغوب فيها.</p>
+            
+            <div class="next-steps">
+                <h3>الخطوات التالية:</h3>
+                <ul class="steps-list">
+                    <li>
+                        <span>تحقق من بريدك الإلكتروني وحمّل الملف المجاني</span>
+                        <i class="fas fa-envelope"></i>
+                    </li>
+                    <li>
+                        <span>انضم إلى مجتمعنا الحصري على تيليجرام للحصول على نصائح يومية</span>
+                        <i class="fab fa-telegram"></i>
+                    </li>
+                    <li>
+                        <span>تابعنا على وسائل التواصل الاجتماعي للحصول على آخر التحديثات</span>
+                        <i class="fas fa-heart"></i>
+                    </li>
+                    <li>
+                        <span>هل تحتاج مساعدة فورية؟ تحدث معنا عبر الواتساب</span>
+                        <i class="fab fa-whatsapp"></i>
+                    </li>
+                </ul>
+                
+                <div class="cta-buttons">
+                    <a href="https://t.me/your-telegram-channel" target="_blank" class="btn btn-primary" onclick="gtag('event', 'telegram_join', {'event_category': 'social', 'event_label': 'thank_you_page'});">
+                        <i class="fab fa-telegram"></i> انضم إلى تيليجرام
+                    </a>
+                    <a href="https://wa.me/966500000001" target="_blank" class="btn btn-secondary" onclick="gtag('event', 'whatsapp_click', {'event_category': 'contact', 'event_label': 'thank_you_page'});">
+                        <i class="fab fa-whatsapp"></i> تحدث معنا
+                    </a>
+                </div>
+            </div>
+            
+            <p><strong>هل أعجبتك خدماتنا؟</strong> شاركنا مع أصدقائك الطلاب ليستفيدوا أيضاً!</p>
+            
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-right"></i> العودة للصفحة الرئيسية
+                </a>
+                <a href="index.html#pricing" class="btn btn-primary">
+                    <i class="fas fa-star"></i> اكتشف خدماتنا المميزة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simplified Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>The Student Hub</h3>
+                    <p>شريكك الأكاديمي الموثوق نحو التميز.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <div class="social-links">
+                        <a href="https://www.snapchat.com/add/your-snapchat-username" target="_blank" title="سناب شات"><i class="fab fa-snapchat"></i></a>
+                        <a href="#" target="_blank" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://t.me/your-telegram-channel" target="_blank" title="تيليجرام"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/966500000001" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Student Hub. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
